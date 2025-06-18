@@ -26,7 +26,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ userProfile }) => {
   const [messages, setMessages] = useState<DisplayMessage[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [geminiService] = useState(() => new GeminiService("AIzaSyAlzOv8T5lIGKp1ObvREwjhp8eIrPwYzw4"));
+  const [geminiService] = useState(() => new GeminiService(import.meta.env.VITE_GEMINI_API_KEY));
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
